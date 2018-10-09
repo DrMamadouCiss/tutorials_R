@@ -2,7 +2,7 @@
 layout: default
 title: "home"
 permalink: /
-tags: [ R]
+tags: [R]
 description: Home page
 ---
 
