@@ -1,7 +1,7 @@
 ![](http://www.southgreen.fr/sites/southgreen.fr/themes/southgreen/logo.png)
 # R tutorials
 
-The [https://southgreenplatform.github.io/tutorials/](https://southgreenplatform.github.io/tutorials/)  ...
+The [https://DrMamadouCiss.github.io/tutorials_R/](https://DrMamadouCiss.github.io/tutorials_R/)  ...
 
 ### Who are we?
 
