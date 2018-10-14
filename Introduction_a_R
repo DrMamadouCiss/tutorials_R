@@ -1,0 +1,211 @@
+---
+title: "Introduction au logiciel R"
+author: "Dr Mamadou Ciss"
+date: "10 octobre 2018"
+output:
+  github_document:
+    toc: true
+    toc_depth: 3
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Environnement de travail
+
+### Connaitre son repertoire de travail actuel
+```
+getwd()
+```
+
+### Changer de repertoire de travail
+````{r}
+setwd("C:/Users/hp/Google Drive/ISRA/Formation/Dispensees/R/Test_Rmarkdown")
+```
+
+## Les packages sous R
+
+### Installation de package
+```
+install.packages('ggplot2')
+```
+
+### Telechargement de package
+```
+library('ggplot2')
+```
+
+
+
+## Importation de donnees
+
+### Donnees texte simple 
+
+```{r}
+myfile<-read.table("pheno.txt",h=T,dec=".")
+```
+
+
+
+### Donnees au format CSV
+
+
+## Representation de donnees sous R
+
+### Entete d'un fichier
+
+```{r}
+head(myfile)
+```
+
+
+
+```{r}
+head(myfile,n=3)
+```
+
+
+### Fin d'un fichier
+
+```{r}
+tail(myfile)
+```
+
+
+```{r}
+tail(myfile,n=2)
+```
+
+
+## Statistiques basiques d'une base donnees
+### Taille d'un fichier
+
+```{r}
+dim(myfile)
+```
+
+```{r}
+names(myfile)
+colnames(myfile)
+```
+
+
+### Nombre de lignes d'un fichier
+```{r}
+nrow(myfile)
+```
+
+### Nombre de colonnes d'un fichier
+```{r}
+ncol(myfile)
+```
+
+
+### Longueur d'un vecteur
+```{r}
+length(myfile$Poids_sec)
+```
+
+### Sommaire de la base de donnees
+
+```{r}
+summary(myfile)
+```
+
+
+```{r}
+str(myfile)
+```
+
+
+```{r}
+myfile[2,]
+```
+
+
+```{r}
+myfile[,3]
+```
+
+
+```{r}
+myfile[1,5]
+```
+
+```{r}
+myfile[2:4,]
+```
+
+
+```{r}
+myfile[c(2,4),]
+```
+
+
+```{r}
+myfile[c(2,4),5]
+```
+
+
+Les commandes ```max(x)```, ```min(x)```, ```range(x)```, ```sum(x)```, ```diff(x)```, ```prod(x)```, ```mean(x)```, ```median(x)``` et ```sd(x)``` fournissent le maximum, minimum, amplitude, somme, différences, produit, moyenne, médiane et écart-type des données. Afin de considérer les données manquantes, il est nécessaire d'y inclure ```na.rm = TRUE```.
+
+### Moyenne d'un vecteur
+```{r}
+mean(myfile$Nb_involucres)
+```
+
+
+### Minimum d'un vecteur
+```{r}
+min(myfile$Poids_graines)
+min(myfile$Poids_graines,na.rm = TRUE)
+```
+
+
+```{r}
+mean(myfile$Nb_involucres,na.rm = TRUE)
+```
+
+### Maximum d'un vecteur
+```{r}
+max(myfile$Floraison)
+```
+
+### Somme d'un vecteur
+```{r}
+sum(myfile$Poids_graines)
+sum(myfile$Poids_graines,na.rm = TRUE)
+```
+
+### Variance d'un vecteur
+```{r}
+var(myfile$Poids_graines)
+var(myfile$Poids_graines,na.rm = TRUE)
+```
+
+### Ecart-type d'un vecteur
+```{r}
+sd(myfile$Poids_graines,na.rm = TRUE)
+```
+
+La commande ```table()``` permet de compter les niveaux d'une variable (qualitative ou quantitative). Cette commande génère un tableau d'effectifs pour une ou deux variables. 
+
+```{r}
+table(myfile$Populations)
+```
+
+La commande ```levels()``` permet de lister les niveaux d'une variable qualitative
+
+```{r}
+levels(myfile$Populations)
+```
+
+
+La commande ```nlevels()``` permet de compter le nombre de niveaux d'une variable qualitative
+
+```{r}
+nlevels(myfile$Populations)
+```
+
