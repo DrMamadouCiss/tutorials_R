@@ -1,6 +1,7 @@
 Introduction au logiciel R
 ================
 Dr Mamadou Ciss
+
 14 janvier 2019
 
 -   [Environnement de travail](#environnement-de-travail)
